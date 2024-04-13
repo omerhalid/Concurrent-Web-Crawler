@@ -18,3 +18,9 @@ std::string URLFrontier::getNextURL()
 
     return ""; /// if URLs are available
 }
+
+bool URLFrontier::isEmpty() const
+{
+    std::lock_guard<std::mutex> guard(queue_mutex);
+    return url_queue.empty();
+}

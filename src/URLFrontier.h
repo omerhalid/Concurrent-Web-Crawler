@@ -4,7 +4,7 @@
 
 class URLFrontier {
     std::deque<std::string> url_queue;
-    std::mutex queue_mutex;
+    mutable std::mutex queue_mutex;
 
 public:
     void addURL(const std::string& url);
